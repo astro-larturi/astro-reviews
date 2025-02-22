@@ -1,6 +1,11 @@
 ---
 import PlaceCard from '@/components/PlaceCard.astro'
 import MainLayout from '../layouts/MainLayout.astro'
+import { prisma } from '@/db'
+
+const places = await prisma.place.findMany()
+
+console.log(places)
 ---
 
 <MainLayout>
